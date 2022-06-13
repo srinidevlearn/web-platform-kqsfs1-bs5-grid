@@ -1,0 +1,820 @@
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- Bootstrap CSS -->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+  crossorigin="anonymous"
+/>
+
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+  crossorigin="anonymous"
+></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap"
+  rel="stylesheet"
+/>
+<main>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-3">
+        <section class="my-3 position-sticky top-0" id="navigate">
+          <div class="card">
+            <div class="card-header fs-5 text-left">Navigate</div>
+            <div class="card-body">
+              <details open>
+                <summary>Grid</summary>
+                <details open class="ms-3">
+                  <summary class="link-secondary">Auto Layout Columns</summary>
+                  <a href="#equal-width" class="d-block ms-4">Equal Width</a>
+                  <a href="#one-col-width" class="d-block ms-4"
+                    >One Column Width</a
+                  >
+                  <a href="#var-col-width" class="d-block ms-4"
+                    >Variable Width Content</a
+                  >
+                </details>
+                <details open class="ms-3">
+                  <summary class="link-secondary">Responsive class</summary>
+                  <a href="#all-breakpoints" class="d-block ms-4"
+                    >All breakpoints</a
+                  >
+
+                  <a href="#stack-horiz" class="d-block ms-4"
+                    >Stacked to horizontal</a
+                  >
+                  <a href="#mix-match" class="d-block ms-4">Mix and match</a>
+                  <a href="#row-col" class="d-block ms-4">Row Columns</a>
+                </details>
+
+                <a href="#nesting" class="d-block ms-4">Nesting</a>
+              </details>
+              <a href="#gutters">Gutters</a>
+              <details open>
+                <summary>Column</summary>
+                <a href="#v-align" class="d-block ms-4">Vertical Alignment</a>
+                <a href="#h-align" class="d-block ms-4">horizontal Alignment</a>
+                <a href="#offset-columns" class="d-block ms-4"
+                  >offset columns</a
+                >
+              </details>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-9">
+        <section class="my-3" id="equal-width">
+          <div class="card">
+            <div class="card-header fs-5 text-left">Equal width</div>
+            <div class="card-body mx-2">
+              <div class="row">
+                <div class="col dummy-content">1 of 2</div>
+                <div class="col dummy-content">2 of 2</div>
+              </div>
+              <br />
+              <div class="row">
+                <div class="col dummy-content">1 of 3</div>
+                <div class="col dummy-content">2 of 3</div>
+                <div class="col dummy-content">3 of 3</div>
+              </div>
+            </div>
+            <div class="card-text mx-auto text-muted">
+              <mark>note</mark> : every column will be of same width
+            </div>
+            <div class="card-body">
+              <div class="code-slot"></div>
+            </div>
+          </div>
+        </section>
+        <section class="my-3" id="one-col-width">
+          <div class="card">
+            <div class="card-header fs-5 text-left">One Column Width</div>
+            <div class="card-body mx-2">
+              <div class="row">
+                <div class="col dummy-content">1 of 3</div>
+                <div class="col-8 dummy-content">2 of 3 (wider)</div>
+                <div class="col dummy-content">3 of 3</div>
+              </div>
+              <br />
+              <div class="row">
+                <div class="col dummy-content">1 of 3</div>
+                <div class="col-6 dummy-content">2 of 3 (wider)</div>
+                <div class="col dummy-content">3 of 3</div>
+              </div>
+            </div>
+            <div class="card-text mx-auto text-muted">
+              <mark>note</mark> : any one column will be in greater width rest
+              all of same width
+            </div>
+            <div class="card-body">
+              <div class="code-slot"></div>
+            </div>
+          </div>
+        </section>
+        <section class="my-3" id="var-col-width">
+          <div class="card">
+            <div class="card-header fs-5 text-left">Variable Width Content</div>
+            <div class="card-body mx-2">
+              <div class="row justify-content-center">
+                <div class="col col-lg-2 dummy-content">1 of 3</div>
+                <div class="col-auto dummy-content">
+                  Lorem Ipsum is simply dummy text of the printing.
+                </div>
+                <div class="col col-lg-2 dummy-content">3 of 3</div>
+              </div>
+              <br />
+              <div class="row">
+                <div class="col dummy-content">1 of 3</div>
+                <div class="col-md-auto dummy-content">
+                  Lorem Ipsum is simply dummy text of the printing.
+                </div>
+                <div class="col col-lg-2 dummy-content">3 of 3</div>
+              </div>
+            </div>
+            <div class="card-text mx-5 text-center text-muted">
+              <mark>note</mark> : Use
+              <pre class="d-inline text-danger bg-danger bg-opacity-25 px-1">
+.col-{breakpoint}-auto</pre
+              >
+              classes to size columns based on the natural width of their
+              content.
+            </div>
+            <div class="card-body">
+              <div class="code-slot"></div>
+            </div>
+          </div>
+        </section>
+        <section class="my-3" id="all-breakpoints">
+          <div class="card">
+            <div class="card-header fs-5 text-left">All breakpoints</div>
+            <div class="card-body mx-2">
+              <div class="row">
+                <div class="col dummy-content">col</div>
+                <div class="col dummy-content">col</div>
+                <div class="col dummy-content">col</div>
+                <div class="col dummy-content">col</div>
+              </div>
+              <div class="row">
+                <div class="col-8 dummy-content">col-8</div>
+                <div class="col-4 dummy-content">col-4</div>
+              </div>
+            </div>
+            <div class="card-text mx-5 text-center text-muted">
+              <mark>note</mark> : Use same from the smallest of devices to the
+              largest, use the
+              <pre class="d-inline text-danger bg-danger bg-opacity-25 px-1">
+.col</pre
+              >
+              and
+              <pre class="d-inline text-danger bg-danger bg-opacity-25 px-1">
+.col-*</pre
+              >
+              classes
+            </div>
+            <div class="card-body">
+              <div class="code-slot"></div>
+            </div>
+          </div>
+        </section>
+        <section class="my-3" id="stack-horiz">
+          <div class="card">
+            <div class="card-header fs-5 text-left">Stacked Horizontal</div>
+            <div class="card-body mx-2">
+              <div class="row">
+                <div class="col-sm-8 dummy-content">col-8</div>
+                <div class="col-sm-4 dummy-content">col-4</div>
+              </div>
+              <br />
+              <div class="row">
+                <div class="col-sm dummy-content">col-sm</div>
+                <div class="col-sm dummy-content">col-sm</div>
+                <div class="col-sm dummy-content">col-sm</div>
+              </div>
+            </div>
+            <div class="card-text mx-5 text-center text-muted">
+              <mark>note</mark> : Using a single set of
+              <pre class="d-inline text-danger bg-danger bg-opacity-25 px-1">
+.col-sm-*</pre
+              >
+              classes, you can create a basic grid system that starts out
+              stacked and becomes horizontal at the small breakpoint (
+              <pre class="d-inline text-danger bg-danger bg-opacity-25 px-1">
+sm</pre
+              >
+              ).
+            </div>
+            <div class="card-body">
+              <div class="code-slot"></div>
+            </div>
+          </div>
+        </section>
+        <section class="my-3" id="mix-match">
+          <div class="card">
+            <div class="card-header fs-5 text-left">Mix and Match</div>
+            <div class="card-body mx-2">
+              <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+              <div class="row">
+                <div class="col-12 col-sm-8 dummy-content">col-12 col-md-8</div>
+                <div class="col-6 col-md-4 dummy-content">col-6 col-md-4</div>
+              </div>
+              <br />
+              <!-- Columns start at 50% wide on mobile and changed to to 33.3% wide on desktop -->
+              <div class="row">
+                <div class="col-6 col-md-4 dummy-content">col-6 col-md-4</div>
+                <div class="col-6 col-md-4 dummy-content">col-6 col-md-4</div>
+                <div class="col-6 col-md-4 dummy-content">col-6 col-md-4</div>
+              </div>
+              <br />
+              <!-- Columns are always 50% wide, on mobile and desktop -->
+              <div class="row">
+                <div class="col-6 dummy-content">col-6</div>
+                <div class="col-6 dummy-content">col-6</div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="code-slot"></div>
+            </div>
+          </div>
+        </section>
+        <section class="my-3" id="row-col">
+          <div class="card">
+            <div class="card-header fs-5 text-left">Row Columns</div>
+            <div class="card-body mx-2">
+              <div class="row row-cols-2">
+                <div class="col dummy-content">col</div>
+                <div class="col dummy-content">col</div>
+                <div class="col dummy-content">col</div>
+                <div class="col dummy-content">col</div>
+              </div>
+              <br />
+
+              <div class="row row-cols-3">
+                <div class="col dummy-content">col</div>
+                <div class="col dummy-content">col</div>
+                <div class="col dummy-content">col</div>
+                <div class="col dummy-content">col</div>
+              </div>
+              <br />
+              <div class="row row-cols-auto">
+                <div class="col dummy-content">col</div>
+                <div class="col dummy-content">col</div>
+                <div class="col dummy-content">col</div>
+                <div class="col dummy-content">col</div>
+              </div>
+              <br />
+              <div class="row row-cols-4">
+                <div class="col dummy-content">col</div>
+                <div class="col dummy-content">col</div>
+                <div class="col dummy-content">col</div>
+                <div class="col dummy-content">col</div>
+              </div>
+              <br />
+
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+                <div class="col dummy-content">col</div>
+                <div class="col dummy-content">col</div>
+                <div class="col dummy-content">col</div>
+                <div class="col dummy-content">col</div>
+              </div>
+            </div>
+            <div class="card-text mx-5 text-left text-muted">
+              <mark>note</mark> :
+              <ul>
+                <li>
+                  Use responsive
+                  <pre
+                    class="d-inline text-danger bg-danger bg-opacity-25 px-1"
+                  >
+.row-cols-*</pre
+                  >
+                  classes to quickly set the number of columns
+                </li>
+                <li>
+                  Use responsive
+                  <pre
+                    class="d-inline text-danger bg-danger bg-opacity-25 px-1"
+                  >
+.cols-*</pre
+                  >
+                  classes apply to the individual columns (e.g.,
+                  <pre
+                    class="d-inline text-danger bg-danger bg-opacity-25 px-1"
+                  >
+.col-md-4</pre
+                  >
+                  )
+                </li>
+                <li>
+                  These row columns classes are set on the parent
+                  <pre
+                    class="d-inline text-danger bg-danger bg-opacity-25 px-1"
+                  >
+.row</pre
+                  >
+                  as a shortcut instead of using like
+                  <pre
+                    class="d-inline text-danger bg-danger bg-opacity-25 px-1"
+                  >
+.col-4</pre
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="card-body">
+              <div class="code-slot"></div>
+            </div>
+          </div>
+        </section>
+        <section class="my-3" id="nesting">
+          <div class="card">
+            <div class="card-header fs-5 text-left">Nesting</div>
+            <div class="card-body mx-2">
+              <div class="row">
+                <div class="col-sm-3 dummy-content">Level 1: col-sm-3</div>
+                <div class="col-sm-9 dummy-content">
+                  <div class="row">
+                    <div class="col-8 col-sm-6 dummy-content">
+                      Level 2: col-8 col-sm-6
+                    </div>
+                    <div class="col-4 col-sm-6 dummy-content">
+                      Level 2: col-4 col-sm-6
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-text mx-5 text-center text-muted">
+              <mark>note</mark> : To nest your content with the default grid,
+              add a new
+              <pre class="d-inline text-danger bg-danger bg-opacity-25 px-1">
+.row</pre
+              >
+              and set of
+              <pre class="d-inline text-danger bg-danger bg-opacity-25 px-1">
+.col-sm-*</pre
+              >
+              columns within an existing
+              <pre class="d-inline text-danger bg-danger bg-opacity-25 px-1">
+.col-sm-*</pre
+              >
+              column. Nested rows should include a set of columns that add up to
+              12 or fewer (it is not required that you use all 12 available
+              columns).
+            </div>
+            <div class="card-body">
+              <div class="code-slot"></div>
+            </div>
+          </div>
+        </section>
+        <section class="my-3" id="gutters">
+          <div class="card">
+            <div class="card-header fs-5 text-left">Gutters</div>
+            <div class="card-body mx-2">
+              <p>
+                y axis gutter - margin applied. Note: margin was applied to only
+                top,whereas in doc it would be mentioned as vertical gutter
+              </p>
+
+              <div class="row gy-5">
+                <div class="col-6">
+                  <div class="p-3 dummy-content">Custom column padding</div>
+                </div>
+                <div class="col-6">
+                  <div class="p-3 dummy-content">Custom column padding</div>
+                </div>
+                <div class="col-6">
+                  <div class="p-3 dummy-content">Custom column padding</div>
+                </div>
+                <div class="col-6">
+                  <div class="p-3 dummy-content">Custom column padding</div>
+                </div>
+              </div>
+              <p>x axis gutter - padding applied</p>
+              <div class="row gx-5">
+                <div class="col">
+                  <div class="p-3 dummy-content">Custom column padding</div>
+                </div>
+                <div class="col">
+                  <div class="p-3 dummy-content">Custom column padding</div>
+                </div>
+              </div>
+
+              <p>horizontal and vertical gutters</p>
+              <div class="row g-2">
+                <div class="col-6">
+                  <div class="dummy-content">Custom column padding</div>
+                </div>
+                <div class="col-6">
+                  <div class="dummy-content">Custom column padding</div>
+                </div>
+                <div class="col-6">
+                  <div class="dummy-content">Custom column padding</div>
+                </div>
+                <div class="col-6">
+                  <div class="dummy-content">Custom column padding</div>
+                </div>
+              </div>
+
+              <p>no gutters</p>
+
+              <div class="row g-0">
+                <div class="col-6">
+                  <div class="dummy-content">Custom column padding</div>
+                </div>
+                <div class="col-6">
+                  <div class="dummy-content">Custom column padding</div>
+                </div>
+                <div class="col-6">
+                  <div class="dummy-content">Custom column padding</div>
+                </div>
+                <div class="col-6">
+                  <div class="dummy-content">Custom column padding</div>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="code-slot"></div>
+            </div>
+          </div>
+        </section>
+        <section class="my-3" id="v-align">
+          <div class="card">
+            <div class="card-header fs-5 text-left">Vertical Alignment</div>
+            <div class="card-body mx-2">
+              <p>@ vertically start</p>
+
+              <!-- align at start  -->
+              <div
+                class="row align-items-start dummy-content p-0 bg-light"
+                style="height: 200px"
+              >
+                <div class="col dummy-content">1 of 3 columns</div>
+                <div class="col dummy-content">1 of 3 columns</div>
+                <div class="col dummy-content">1 of 3 columns</div>
+              </div>
+              <p>@ vertically center</p>
+              <!-- align at center  -->
+              <div
+                class="row align-items-center dummy-content p-0 bg-light"
+                style="height: 200px"
+              >
+                <div class="col dummy-content">1 of 3 columns</div>
+                <div class="col dummy-content">1 of 3 columns</div>
+                <div class="col dummy-content">1 of 3 columns</div>
+              </div>
+              <p>@ vertically end</p>
+              <!-- align at end  -->
+              <div
+                class="row align-items-end dummy-content p-0 bg-light"
+                style="height: 200px"
+              >
+                <div class="col dummy-content">1 of 3 columns</div>
+                <div class="col dummy-content">1 of 3 columns</div>
+                <div class="col dummy-content">1 of 3 columns</div>
+              </div>
+              <p>@ vertically align each column at different height</p>
+              <!-- align at end  -->
+              <div class="row dummy-content p-0 bg-light" style="height: 200px">
+                <div class="col dummy-content align-self-end">
+                  1 of 3 columns
+                </div>
+                <div class="col dummy-content align-self-center">
+                  1 of 3 columns
+                </div>
+                <div class="col dummy-content align-self-start">
+                  1 of 3 columns
+                </div>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <div class="code-slot"></div>
+            </div>
+          </div>
+        </section>
+        <section class="my-3" id="h-align">
+          <div class="card">
+            <div class="card-header fs-5 text-left">Horizontal Alignment</div>
+            <div class="card-body mx-2">
+              <p>@ horizontally start</p>
+
+              <!-- align at start  -->
+              <div class="row justify-content-start dummy-content p-0 bg-light">
+                <div class="col-3 dummy-content">1 of 3</div>
+                <div class="col-3 dummy-content">1 of 3</div>
+                <div class="col-3 dummy-content">1 of 3</div>
+              </div>
+              <p>@ horizontally center</p>
+              <!-- align at center  -->
+              <div
+                class="row justify-content-center dummy-content p-0 bg-light"
+              >
+                <div class="col-3 dummy-content">1 of 3</div>
+                <div class="col-3 dummy-content">1 of 3</div>
+                <div class="col-3 dummy-content">1 of 3</div>
+              </div>
+              <p>@ horizontally end</p>
+              <!-- align at end  -->
+              <div class="row justify-content-end dummy-content p-0 bg-light">
+                <div class="col-3 dummy-content">1 of 3</div>
+                <div class="col-3 dummy-content">1 of 3</div>
+                <div class="col-3 dummy-content">1 of 3</div>
+              </div>
+              <p>@ horizontally space between</p>
+              <!-- align with space between   -->
+              <div
+                class="row justify-content-between dummy-content p-0 bg-light"
+              >
+                <div class="col-3 dummy-content">1 of 3</div>
+                <div class="col-3 dummy-content">1 of 3</div>
+                <div class="col-3 dummy-content">1 of 3</div>
+              </div>
+              <p>@ horizontally space around</p>
+              <!-- align with space around  -->
+              <div
+                class="row justify-content-around dummy-content p-0 bg-light"
+              >
+                <div class="col-3 dummy-content">1 of 3</div>
+                <div class="col-3 dummy-content">1 of 3</div>
+                <div class="col-3 dummy-content">1 of 3</div>
+              </div>
+
+              <p>@ horizontally space evenly</p>
+              <!-- align with space around  -->
+              <div
+                class="row justify-content-evenly dummy-content p-0 bg-light"
+              >
+                <div class="col-3 dummy-content">1 of 3</div>
+                <div class="col-3 dummy-content">1 of 3</div>
+                <div class="col-3 dummy-content">1 of 3</div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="code-slot"></div>
+            </div>
+          </div>
+        </section>
+        <section class="my-3" id="offset-columns">
+          <div class="card">
+            <div class="card-header fs-5 text-left">Offset Columns</div>
+            <div class="card-body mx-2">
+              <div class="row">
+                <div class="col-md-4 dummy-content">col-md-4</div>
+                <div class="col-md-4 offset-4 dummy-content">
+                  col-md-4 offset-4
+                </div>
+              </div>
+              <br />
+              <div class="row">
+                <div class="col-md-4 dummy-content">col-md-4</div>
+                <div class="col-md-4 offset-md-4 dummy-content">
+                  col-md-4 offset-md-4
+                </div>
+              </div>
+              <br />
+              <div class="row">
+                <div class="col-md-3 offset-md-3 dummy-content">
+                  col-md-3 offset-md-3
+                </div>
+                <div class="col-md-3 offset-md-3 dummy-content">
+                  col-md-3 offset-md-3
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</main>
+<section class="globalStyles mx-1">
+  <div class="card" id="stylesdeclarations">
+    <div class="card-header fs-5 text-left">Required styles</div>
+    <div class="card-text text-center fs-6 mt-2">
+      <mark>Notes</mark> : to make visually presentable some custom css classes
+      added were mentioned below
+    </div>
+    <div class="card-body">
+      <style>
+        p {
+          margin-top: 10px;
+          margin-bottom: 10px;
+          text-align: center;
+          background: rgba(218, 218, 218, 0.55);
+        }
+
+        pre.prettyprint.prettyprinted {
+          padding: 1rem !important;
+        }
+
+        mark {
+          text-transform: uppercase !important;
+        }
+
+        .card-body .card {
+          margin: 2rem 0px;
+        }
+
+        .dummy-content {
+          padding: 2rem;
+          background: rgba(218, 218, 218, 0.55);
+          outline: 1px solid #b9f;
+          color: black;
+          border-radius: 10px;
+          font-family: 'JetBrains Mono', monospace !important;
+        }
+
+        .card-header {
+          border-top-left-radius: 20px !important;
+          border-top-right-radius: 20px !important;
+          border-bottom: none;
+        }
+
+        .card {
+          box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1),
+            0 1px 2px -1px rgb(0 0 0 / 0.1);
+          border: none;
+        }
+
+        .card,
+        .code-slot,
+        /**
+          plugin prettyprint
+          **/
+        pre.prettyprint.prettyprinted {
+          border-radius: 20px !important;
+        }
+
+        pre {
+          font-family: 'JetBrains Mono', monospace !important;
+        }
+      </style>
+    </div>
+    <div class="card-body">
+      <div class="code-slot shadow rounded-3 p-3"></div>
+    </div>
+  </div>
+</section>
+
+<section class="position-fixed invisible" id="floating-btn" style="z-index: 99">
+  <div class="position-fixed bottom-0 end-0 m-3 mx-4">
+    <button
+      type="button"
+      class="btn rounded-pill btn-sm btn-primary"
+      onClick="moveToTop()"
+    >
+      &#8593;
+    </button>
+  </div>
+</section>
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+<style>
+  /*! Color themes for Google Code Prettify | MIT License | github.com/jmblog/color-themes-for-google-code-prettify */
+  .prettyprint {
+    background: #131513;
+    font-family: Menlo, Bitstream Vera Sans Mono, DejaVu Sans Mono, Monaco,
+      Consolas, monospace;
+    border: 0 !important;
+  }
+
+  .pln {
+    color: #f4fbf4;
+  }
+
+  ol.linenums {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #687d68;
+  }
+
+  li.L0,
+  li.L1,
+  li.L2,
+  li.L3,
+  li.L4,
+  li.L5,
+  li.L6,
+  li.L7,
+  li.L8,
+  li.L9 {
+    padding-left: 1em;
+    background-color: #131513;
+    list-style-type: decimal;
+  }
+
+  @media screen {
+    .str {
+      color: #29a329;
+    }
+
+    .kwd {
+      color: #ad2bee;
+    }
+
+    .com {
+      color: #687d68;
+    }
+
+    .typ {
+      color: #3d62f5;
+    }
+
+    .lit {
+      color: #87711d;
+    }
+
+    .pun {
+      color: #f4fbf4;
+    }
+
+    .opn {
+      color: #f4fbf4;
+    }
+
+    .clo {
+      color: #f4fbf4;
+    }
+
+    .tag {
+      color: #e6193c;
+    }
+
+    .atn {
+      color: #87711d;
+    }
+
+    .atv {
+      color: #1999b3;
+    }
+
+    .dec {
+      color: #87711d;
+    }
+
+    .var {
+      color: #e6193c;
+    }
+
+    .fun {
+      color: #3d62f5;
+    }
+  }
+</style>
+<script id="scroll_code_snippet">
+  // function responsible for making scroll to move top
+  function moveToTop() {
+    return window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }
+  // listen for scroll event
+  window.addEventListener('scroll', (event) => {
+    if (window.pageYOffset >= 500) {
+      // toggle invisible and visible to floating button
+      document
+        .getElementById('floating-btn')
+        .classList.replace('invisible', 'visible');
+    } else {
+      // toggle visible and invisible to floating button
+      document
+        .getElementById('floating-btn')
+        .classList.replace('visible', 'invisible');
+    }
+  });
+  // query all id inside dom element with not having id=""
+  var doc = document.querySelectorAll('*[id]:not([id=""])');
+  // iterate all queried id
+  doc.forEach((item, index) => {
+    // target code-slot
+    var codeSlot = item.querySelector('.code-slot');
+    // check valid code-slot
+    if (codeSlot) {
+      // query first card body from all cards
+      var code = item.querySelector('section > .card .card-body');
+      // dynamically append show code snipets
+      codeSlot.appendChild(createDetailSummary(code));
+    }
+  });
+  // responsible for details summary and code block
+  function createDetailSummary(node) {
+    const details = document.createElement('details');
+    const p1 = document.createElement('summary');
+    var node = node.cloneNode(true);
+    const p2 = document.createElement('pre');
+    p1.textContent = 'show code snippet';
+    p2.classList.add('prettyprint');
+    // all html typed code were inserted as textcontent
+    p2.textContent = node.innerHTML;
+    details.appendChild(p1);
+    details.appendChild(p2);
+    return details;
+  }
+</script>
